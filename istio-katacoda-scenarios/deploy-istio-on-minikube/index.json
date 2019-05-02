@@ -1,20 +1,20 @@
 {
-    "id": "deploy-istio-on-kubernetes",
+    "id": "Istio-advance-traffic-routing",
     "pathwayId": "istio",
     "pathwayTitle": "Istio",
     "icon": "fa-istio",
-    "title": "Get Started with Istio and Kubernetes",
-    "description": "Learn how to get started with Istio Service Mesh and Kubernetes",
+    "title": "Istio Advance traffic routing concepts",
+    "description": "Understand Istio Service Mesh Advance traffic routing concepts",
     "authenticated": false,
     "details": {
         "steps": [
             {
-                "title": "Launch Kubernetes Cluster",
+                "title": "Launch Kubernetes Cluster on Minikube",
                 "code": "set-env.sh",
                 "text": "step1.md"
             },
             {
-                "title": "Deploy Istio",
+                "title": "Deploy & Start Istio",
                 "courseData": "ensure-configured.sh",
                 "text": "step2.md"
             },
@@ -25,26 +25,6 @@
             {
                 "title": "Deploy Istio Metrics and Tracing",
                 "text": "step3.md"
-            },
-            {
-                "title": "Deploy Sample Application",
-                "text": "step4.md"
-            },
-            {
-                "title": "Bookinfo Architecture",
-                "text": "step5.md"
-            },
-            {
-                "title": "Control Routing",
-                "text": "step6.md"
-            },
-            {
-                "title": "Access Metrics",
-                "text": "step7.md"
-            },
-            {
-                "title": "Visualise Cluster using Weave Scope",
-                "text": "step8.md"
             }
         ],
         "intro": {
