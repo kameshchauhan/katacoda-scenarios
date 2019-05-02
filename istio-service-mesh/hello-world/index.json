@@ -1,19 +1,13 @@
 {
-  "title": "Hello World Docker",
-  "description": "1st sample scenario of docker hello world",
+  "title": "First scenario",
+  "description": "First scenario",
+  "difficulty": "Beginner",
+  "time": "2",
   "details": {
     "steps": [
       {
         "title": "Step 1",
         "text": "step1.md"
-      },
-      {
-        "title": "Step 2",
-        "text": "step2.md"
-      },
-      {
-        "title": "Step 3",
-        "text": "step3.md"
       }
     ],
     "intro": {

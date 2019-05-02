@@ -1,0 +1,1 @@
+You have successfully executed hello world image on docker
