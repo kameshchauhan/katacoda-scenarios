@@ -1,1 +1,0 @@
-hello world in docker image
