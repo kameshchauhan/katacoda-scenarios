@@ -3,28 +3,28 @@
     "pathwayId": "istio",
     "pathwayTitle": "Istio",
     "icon": "fa-istio",
-    "title": "Istio Advance traffic routing concepts",
-    "description": "Understand Istio Service Mesh Advance traffic routing concepts",
+    "title": "Istio - Intelligent Traffic Management",
+    "description": "Learn & Understand, Istio Service Mesh Advance traffic routing concepts",
     "authenticated": false,
     "details": {
         "steps": [
             {
-                "title": "Launch Kubernetes Cluster on Minikube",
+                "title": "Setup & Start minikube",
                 "code": "set-env.sh",
+                "courseData": "ensure-configured.sh",
                 "text": "step1.md"
             },
             {
-                "title": "Deploy & Start Istio",
-                "courseData": "ensure-configured.sh",
+                "title": "Download and setup Istio",
                 "text": "step2.md"
             },
             {
-                "title": "Istio Architecture",
-                "text": "step2a.md"
+                "title": "Deploy the demo application",
+                "text": "step3.md"
             },
             {
-                "title": "Deploy Istio Metrics and Tracing",
-                "text": "step3.md"
+                "title": "Demonstrate blue/green deployment",
+                "text": "step4.md"
             }
         ],
         "intro": {

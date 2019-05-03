@@ -1,16 +1,35 @@
-To collect and view metrics provided by Mixer, install Prometheus Grafana and ServiceGraph addons.
-
-Prometheus gathers metrics from the Mixer. `kubectl apply -f istio/addons/prometheus.yaml`{{execute}}
-
-Grafana produces dashboards based on the data collected by Prometheus. `kubectl apply -f istio/addons/grafana.yaml`{{execute}}
-
-ServiceGraph delivers the ability to visualise dependencies between services. `kubectl apply -f istio/addons/servicegraph.yaml`{{execute}}
-
-Zipkin offers distributed tracing. `kubectl apply -f istio/addons/zipkin.yaml`{{execute}}
+Clone the Git repository for demo script and application code
+`cd /root/istio
+git clone https://github.com/kameshchauhan/scripts-istio.git
+git clone https://github.com/redhat-developer-demos/istio-tutorial.git
+cd scripts-istio
+`{{execute}}
 
 
-## Check Status
+Deploy the application customer, preferences v1 and recommendation v1
+`./04-1_deploy_microservices.sh`{{execute}}
 
-As with Istio, these addons are deployed via Pods.
+Now you can see the traffic
+`./poll_customer.sh`{{execute }}
 
-`kubectl get pods -n istio-system`{{execute}}
+Build, package and deploy microservices
+`./04-2_deploy_recommendationv2.sh`{{execute}}
+
+
+Modify to create version v2 of the recommendation service
+`cp RecommendationController.java ../istio-tutorial/recommendation/java/springboot/src/main/java/com/redhat/developer/demos/recommendation/`{{execute}}
+
+
+Build, package & deploy the modified version v2 of recommendation service
+`./04-2_deploy_recommendationv2.sh`{{execute}}
+
+
+
+
+### Setup telemetry
+
+Patch the different addon services to nodeport
+`./02-1_patchServicesToNodePort.sh
+./02-2_setupKiali.sh`{{execute}}
+
+
