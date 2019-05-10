@@ -1,7 +1,7 @@
 {
-    "id": "istio-traffic-management",
+    "id": "traffic-management",
     "pathwayId": "istio",
-    "pathwayTitle": "Istio",
+    "pathwayTitle": "istio",
     "icon": "fa-istio",
     "title": "Istio - Intelligent Traffic Management",
     "description": "Learn & Understand, Istio Service Mesh Advance traffic routing concepts",
