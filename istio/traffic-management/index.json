@@ -1,5 +1,5 @@
 {
-    "id": "Istio-advance-traffic-routing",
+    "id": "istio-traffic-management",
     "pathwayId": "istio",
     "pathwayTitle": "Istio",
     "icon": "fa-istio",
@@ -46,9 +46,5 @@
             "/javascripts/term.js",
             "/javascripts/terminal-application.js"
         ]
-    },
-    "backend": {
-        "port": 80,
-        "dockerimage": "istio"
     }
 }

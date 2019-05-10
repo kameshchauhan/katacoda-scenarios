@@ -1,0 +1,12 @@
+{
+  "title": "Istio by kamesh",
+  "icon": "fa-docker",
+  "description": "Learn concepts of Istio",
+  "courses": [
+    {
+      "course_id": "istio",
+      "title": "Istio",
+      "description": "Learn concepts of Istio on katacoda"
+    }
+  ]
+}
