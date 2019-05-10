@@ -12,7 +12,7 @@ To start, launch the Kubernetes cluster. This will launch a two-node Kubernetes 
 ### If the status above shows stopped, then Start the minikube 
 
 
-`minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0`{{execute}}
+`minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0`
 
 
 It will take around 3-5 minutes. 
@@ -39,7 +39,7 @@ Kubernetes has a web-based dashboard UI giving visibility into the Kubernetes cl
 
 
 Enable the kubernetes dashboard 
-`minikube addons enable dashboard`{{execute}}
+`minikube addons enable dashboard`
 
 
 Patch the dashboard service

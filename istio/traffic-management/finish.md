@@ -1,1 +1,1 @@
-You have learned how to install istio on minikube
+You have learned the advance routing concepts of Istio using Virtual Service and destination rule.

@@ -1,16 +1,21 @@
 {
   "courses": [
     {
-      "title": "Istio's Concepts",
-      "description": "Learn the concepts of Istio",
+      "title": "Istio - Service Mesh",
+      "description": "Learn the concepts and mechanism of Istio, like traffic management, resiliency, security, telemetry etc...",
       "id": "istio"
     }
   ],
   "scenarios": [
     {
       "title": "Getting Started with Hello World",
-      "description": "Learn how to configure Envoy Proxy using a static configuration",
+      "description": "Learn how to echo hello world on terminal",
       "id": "hello-world"
+    },
+    {
+      "title": "How to upload assets",
+      "description": "Learn how to upload assets",
+      "id": "upload-assets"
     }
   ]
 }

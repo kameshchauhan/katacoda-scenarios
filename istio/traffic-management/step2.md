@@ -1,13 +1,5 @@
 Download & Install Istio CRDs
-`export ISTIO_VERSION="1.1.3"
-mkdir istio
-cd istio
-curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.1.3 sh -
-export ISTIO_HOME=/istio/istio-1.1.3
-export NAMESPACE="istio"
-cd /root/istio/istio-1.1.3
-export PATH=$PWD/bin:$PATH
-`{{execute}}
+
 
 
 ### Create a namespace for the istio-system components:

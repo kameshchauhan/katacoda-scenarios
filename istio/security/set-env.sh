@@ -10,7 +10,7 @@ export ISTIO_HOME=/istio/istio-1.1.3
 export NAMESPACE="istio" 
 cd /root/istio/istio-1.1.3 
 export PATH=$PWD/bin:$PATH
-minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0`{{execute}} 
+minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0
  
  
  
