@@ -1,12 +1,11 @@
 {
-  "title": "Istio by kamesh",
+  "title": "Service Mesh with Istio",
   "icon": "fa-docker",
-  "description": "Learn concepts of Istio",
   "courses": [
     {
-      "course_id": "istio",
-      "title": "Istio",
-      "description": "Learn concepts of Istio on katacoda"
+      "external_link": "https://learn.openshift.com/servicemesh/1-introduction",
+      "course_id": "traffic-management",
+      "title": "Istio advance traffic management"
     }
   ]
 }
