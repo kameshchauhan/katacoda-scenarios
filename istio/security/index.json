@@ -1,0 +1,50 @@
+{
+    "id": "security",
+    "pathwayId": "istio",
+    "pathwayTitle": "istio",
+    "icon": "fa-istio",
+    "title": "Istio - Security & encryption",
+    "description": "Learn & Understand, Istio Service Mesh Advance Security concepts like mTLS, end-user authentication, JWT",
+    "authenticated": false,
+    "details": {
+        "steps": [
+            {
+                "title": "Setup & Start minikube",
+                "code": "set-env.sh",
+                "courseData": "ensure-configured.sh",
+                "text": "step1.md"
+            },
+            {
+                "title": "Download and setup Istio",
+                "text": "step2.md"
+            },
+            {
+                "title": "Deploy the demo application",
+                "text": "step3.md"
+            },
+            {
+                "title": "Demonstrate blue/green deployment",
+                "text": "step4.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboard": "Dashboard",
+        "uilayout": "terminal-terminal-v1",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+        "uidependencies": [
+            "/socket.io/socket.io.js",
+            "/javascripts/term.js",
+            "/javascripts/terminal-application.js"
+        ]
+    }
+}

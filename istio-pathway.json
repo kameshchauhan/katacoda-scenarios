@@ -1,11 +1,17 @@
 {
   "title": "Service Mesh with Istio",
+  "description": "Demonstration of different Istio capabilities",
   "icon": "fa-docker",
   "courses": [
     {
-      "external_link": "https://learn.openshift.com/servicemesh/1-introduction",
       "course_id": "traffic-management",
-      "title": "Istio advance traffic management"
+      "title": "Istio advance traffic management",
+      "description": "Learn the concepts and mechanism of Istio's advance traffic routing"
+    },
+    {
+      "course_id": "security",
+      "title": "Istio security feature",
+      "description": "Learn the concepts and mechanism of Istio's security like mTLS, end-user authentication"
     }
   ]
 }
