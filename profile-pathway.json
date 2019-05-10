@@ -1,14 +1,17 @@
 {
+
+  "courses": [
+    {
+      "title": "Istio's Concepts",
+      "description": "Learn the concepts of Istio",
+      "id": "istio"
+    }
+  ],
   "scenarios": [
     {
       "title": "Getting Started with Hello World",
       "description": "Learn how to configure Envoy Proxy using a static configuration",
       "id": "hello-world"
-    },
-    {
-      "title": "Istio's Concepts",
-      "description": "Learn the concepts of Istio",
-      "id": "istio"
     }
   ]
 }
