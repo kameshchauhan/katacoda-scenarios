@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 "environment": {
   "showdashboard": true,
-  "dashboards": [{"name": "Display 80", "port": 80}, {"name": "Display 8080", "port": 8080}],
-} 
+  "dashboards": [
+        {"name": "Display 80", "port": 80},
+        {"name": "Display 8080", "port": 8080}
+    ]
+}
 mkdir openfaas
 cd openfaas
 export PATH=$PWD/bin:$PATH
@@ -22,11 +25,18 @@ kubectl -n openfaas create secret generic basic-auth \
 
 cd faas-netes && kubectl apply -f ./yaml
 
-kubectl port-forward svc/gateway -n openfaas 31112:8080 &
+kubectl patch service/gateway -p '{"spec":{"type":"NodePort"}}' -n openfaas
 
+export OPENFAAS_PORT=$(kubectl get service/gateway  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
 
-export OPENFAAS_URL=https://[[HOST_SUBDOMAIN]]-31112-[[KATACODA_HOST]].environments.katacoda.com/
+export OPENFAAS_URL=https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com/
+
+# install faas-cli
+curl -sL cli.openfaas.com | sudo sh
 
 echo -n $PASSWORD | faas-cli login --password-stdin
 
+# Patch the k8s dashboard
 kubectl patch service/kubernetes-dashboard -p '{"spec":{"type":"NodePort"}}' -n kube-system
+
+echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin —password-stdin
