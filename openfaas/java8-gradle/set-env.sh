@@ -31,15 +31,16 @@ curl -sL cli.openfaas.com | sudo sh
 
 echo -n $PASSWORD | faas-cli login --password-stdin
 
+
+echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin —password-stdin
+
+cd ..
+
 # Patch the k8s dashboard
 kubectl patch service/kubernetes-dashboard -p '{"spec":{"type":"NodePort"}}' -n kube-system
 
 # Check the port of the dashboard:
 export K8S_DASH_PORT=$(kubectl get svc kubernetes-dashboard -n kube-system -o 'jsonpath={.spec.ports[0].nodePort}')
-export K8S_DASHBOARD=https://[[HOST_SUBDOMAIN]]-$K8S_DASH_PORT-[[KATACODA_HOST]].environments.katacoda.com/
-
-echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin —password-stdin
-
-cd ..
+export K8S_DASHBOARD=https://[[HOST_SUBDOMAIN]]-$K8S_DASH_PORT-[[KATACODA_HOST]].environments.katacoda.com
 
 echo $OPENFAAS_URL
