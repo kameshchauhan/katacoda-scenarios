@@ -1,0 +1,49 @@
+{
+    "id": "java8-gradle",
+    "pathwayId": "openfaas",
+    "pathwayTitle": "openfaas",
+    "icon": "fa-openfaas",
+    "title": "OpenFaaS - Serverless Functions",
+    "description": "Learn & try how to write java8 function using gradle as build system",
+    "authenticated": false,
+    "details": {
+        "steps": [
+            {
+                "title": "Setup & Start OpenFaaS",
+                "code": "set-env.sh",
+                "courseData": "ensure-configured.sh",
+                "text": "step1.md"
+            },
+            {
+                "title": "Download and setup Istio",
+                "text": "step2.md"
+            },
+            {
+                "title": "Deploy the demo application",
+                "text": "step3.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "dashboard": "Dashboard",
+        "uilayout": "editor-terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+        "uidependencies": [
+            "/socket.io/socket.io.js",
+            "/javascripts/term.js",
+            "/javascripts/terminal-application.js"
+        ]
+    },
+    "backend": {
+        "imageid": "minikube"
+    }
+}

@@ -4,6 +4,11 @@
       "title": "Istio - Service Mesh",
       "description": "Learn the concepts and mechanism of Istio, like traffic management, resiliency, security, telemetry etc...",
       "id": "istio"
+    },
+    {
+      "title": "OpenFaaS - Serverless using OpenFaaS",
+      "description": "Learn how to develop severless architecture using OpenFaaS writing your functions in any language!",
+      "id": "openfaas"
     }
   ],
   "scenarios": [
