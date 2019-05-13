@@ -1,4 +1,5 @@
-Check that the installed OpenFaaS environment is working as expected.
+The OpenFaaS environment is being prepared, wait for 2-3 minutes to let it up and you will 
+see the OpenFaaS Gateway URL in the terminal aside. 
 
 ### OpenFaaS Design & Architecture
 Below is the design and Architecture of OpenFaaS.
@@ -7,8 +8,12 @@ Below is the design and Architecture of OpenFaaS.
 
 ### Access the OpenFaaS Gateway
 Assess the below Gatway URL and login with `user/pass` as `admin/admin`. Once login you should be
-able to see the dashboard and option to deploy sample function.
-[OpenFaaS Gateway]([OPENFAAS_URL])
+able to see the dashboard and option to deploy sample function.  
+
+`echo $OPENFAAS_URL`{{execute}}
+
+The gateway will take a while to get started, so refresh the webpage (url returned by the previous
+command) in a while to see if it is up.
 
 ### Deploy available sample function from store 
 Click on deploy new function option and select "figlet" from the available list and click deploy.

@@ -9,7 +9,7 @@
     "details": {
         "steps": [
             {
-                "title": "Check the OpenFaaS environment",
+                "title": "Verify the OpenFaaS environment",
                 "code": "set-env.sh",
                 "courseData": "ensure-configured.sh",
                 "text": "step1.md"
