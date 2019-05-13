@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-mkdir openfaas
-cd openfaas
 
 minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0
 minikube addons enable dashboard
 
+mkdir openfaas
+cd openfaas
 git clone https://github.com/openfaas/faas-netes
 
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
