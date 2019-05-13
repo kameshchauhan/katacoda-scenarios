@@ -6,16 +6,6 @@ To start, launch the Kubernetes cluster. This will launch a two-node Kubernetes 
 
 `minikube status`{{execute}}
 
-
-### If the status above shows stopped, then Start the minikube 
-
-
-`minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0`
-
-
-It will take around 3-5 minutes. 
-
-
 ### Check the status of cluster by 
 
 
