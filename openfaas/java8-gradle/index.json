@@ -36,12 +36,7 @@
         "showdashboard": true,
         "dashboard": "Dashboard",
         "uilayout": "editor-terminal",
-        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
-        "uidependencies": [
-            "/socket.io/socket.io.js",
-            "/javascripts/term.js",
-            "/javascripts/terminal-application.js"
-        ]
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
     },
     "backend": {
         "imageid": "minikube"
