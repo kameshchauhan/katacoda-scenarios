@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
-"environment": {
-  "showdashboard": true
-} 
 mkdir openfaas
 cd openfaas
-export PATH=$PWD/bin:$PATH
+
 minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0
 minikube addons enable dashboard
 
@@ -21,6 +18,8 @@ kubectl -n openfaas create secret generic basic-auth \
 
 cd faas-netes && kubectl apply -f ./yaml
 
+export PATH=$PWD/bin:$PATH
+
 kubectl patch service/gateway -p '{"spec":{"type":"NodePort"}}' -n openfaas
 
 export OPENFAAS_PORT=$(kubectl get service/gateway  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
@@ -36,3 +35,5 @@ echo -n $PASSWORD | faas-cli login --password-stdin
 kubectl patch service/kubernetes-dashboard -p '{"spec":{"type":"NodePort"}}' -n kube-system
 
 echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin —password-stdin
+
+cd ..

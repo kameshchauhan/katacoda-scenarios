@@ -1,42 +1,16 @@
-To start, launch the Kubernetes cluster. This will launch a two-node Kubernetes cluster with one master and one node.
+Check that the installed OpenFaaS environment is working as expected.
 
+### Access the OpenFaaS Gateway
+Assess the below Gatway URL and login with user/pass as admin/admin. Once login you should be
+able to see the dashboard and option to deploy sample function.
 
-### Check if minikube is running
+https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com
 
+### Deploy available sample function from store 
+Click on deploy new function option and select "figlet" from the available list and click deploy.
+Observe the status as "not ready" and in few minutes, it will become "ready". Click the function
+to invoke by providing any simple word like "Hello World" in the Request Body section and check 
+the output.
+Correct output confirms the correct working of OpenFaaS environment.
 
-`minikube status`{{execute}}
-
-### Check the status of cluster by 
-
-
-`minikube status`{{execute}}
-
-
-#### Health Check
-
-
-Once started, you can get the status of the cluster with `kubectl cluster-info`{{execute}}
-
-
-
-
-Kubernetes has a web-based dashboard UI giving visibility into the Kubernetes cluster.
-
-
-## Task
-
-
-Enable the kubernetes dashboard 
-`minikube addons enable dashboard`
-
-
-Patch the dashboard service
-`kubectl patch service/kubernetes-dashboard -p '{"spec":{"type":"NodePort"}}' -n kube-system`{{execute}}
-
-
-Check the port of the dashboard:
-`kubectl get svc kubernetes-dashboard -n kube-system -o 'jsonpath={.spec.ports[0].nodePort}'`{{execute}}
-
-
-See kuberenetes dashboard at https://[[HOST_SUBDOMAIN]]-30000-[[KATACODA_HOST]].environments.katacoda.com/
-
+Proceed to next step to start creating your own function.
