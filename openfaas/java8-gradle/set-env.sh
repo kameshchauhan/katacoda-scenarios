@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 "environment": {
-  "showdashboard": true,
-  "dashboards": [
-        {"name": "Display 80", "port": 80},
-        {"name": "Display 8080", "port": 8080}
-    ]
-}
+  "showdashboard": true
+} 
 mkdir openfaas
 cd openfaas
 export PATH=$PWD/bin:$PATH
