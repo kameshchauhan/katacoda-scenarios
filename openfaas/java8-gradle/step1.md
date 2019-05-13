@@ -1,9 +1,9 @@
 Check that the installed OpenFaaS environment is working as expected.
 
 ### Access the OpenFaaS Gateway
-Assess the below Gatway URL and login with user/pass as admin/admin. Once login you should be
+Assess the below Gatway URL and login with `user/pass` as `admin/admin`. Once login you should be
 able to see the dashboard and option to deploy sample function.
-[OpenFaaS Gateway](https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com)
+[OpenFaaS Gateway]($OPENFAAS_URL)
 
 ### Deploy available sample function from store 
 Click on deploy new function option and select "figlet" from the available list and click deploy.

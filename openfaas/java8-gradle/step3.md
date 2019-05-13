@@ -6,7 +6,7 @@ the dependencies it needs:
 
 ### Push the built image to Docker Hub
 In order to push the built image to Docker hub, login via docker cli as below.
-`docker login $username`{{execute}}
+`docker login`{{execute}}
 
 On successful login to docker hub account, now you can push the built image
 so that on deployment of the function, the required image will be pulled 
@@ -25,7 +25,7 @@ the CLI or even curl.
 
 Open an OpenFaaS gateway and see all the deployed function to test each:
 
-`open https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com)`{{execute}}
+`echo $OPENFAAS_URL`{{execute}}
 
 Or
 
@@ -33,4 +33,4 @@ Or
 
 Or
 
-`open https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com/function/hello-java)`{{execute}}
+`echo $OPENFAAS_URL/function/hello-java`{{execute}}

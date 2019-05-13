@@ -37,3 +37,5 @@ kubectl patch service/kubernetes-dashboard -p '{"spec":{"type":"NodePort"}}' -n 
 echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin —password-stdin
 
 cd ..
+
+echo $OPENFAAS_URL

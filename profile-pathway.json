@@ -6,8 +6,8 @@
       "id": "istio"
     },
     {
-      "title": "OpenFaaS - Serverless using OpenFaaS",
-      "description": "Learn how to develop severless architecture using OpenFaaS writing your functions in any language!",
+      "title": "OpenFaaS - Polyglot Serverless functions",
+      "description": "Learn how to write polyglot functions in the serverless architecture using OpenFaaS; writing your functions in any language!",
       "id": "openfaas"
     }
   ],

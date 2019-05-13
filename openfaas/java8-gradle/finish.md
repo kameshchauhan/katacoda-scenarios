@@ -1,1 +1,1 @@
-You have learned the advance routing concepts of Istio using Virtual Service and destination rule.
+You have learned how to write OpenFaaS function using java8 and Gradle as build system.

@@ -1,17 +1,12 @@
 {
-  "title": "Serverless architeture using OpenFaaS",
-  "description": "Demonstration the use of OpenFaaS to create serverless functions",
-  "icon": "fa-docker",
+  "title": "Serverless Architeture using OpenFaaS",
+  "description": "Demonstration of the use of OpenFaaS to create polyglot serverless functions",
+  "icon": "fa-openfaas",
   "courses": [
     {
       "course_id": "java8-gradle",
-      "title": "OpenFaaS -  Using gradle based java 8 function",
-      "description": "Learn how to use the java8 to write serverless function using gradle as build system"
-    },
-    {
-      "course_id": "java8-maven",
-      "title": "OpenFaaS -  Using Maven based java 8 function",
-      "description": "Learn how to use the java8 to write serverless function using Maven as build system"
+      "title": "OpenFaaS - Function using Java8 and Gradle",
+      "description": "Learn how to use the java8 to write serverless function using Gradle as build system"
     }
   ]
 }
