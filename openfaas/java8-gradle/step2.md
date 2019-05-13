@@ -17,20 +17,17 @@ In order to deploy custom function to OpenFaaS, a Docker Hub username or private
 is required to store the images.
 
 export your Docker Hub account as environment variable like below:
-export username=kameshc
- 
+`export username=kameshc`{{execute}}
+  
 ### Creating a new project
-
-`cd /root/openfaas`{{execute}}
-
 Now create a new function called "hello-java" by using below command
 
 `faas-cli new --lang java8 hello-java --prefix=$username`{{execute}}
 
 This generates several files:
 
-build.gradle - specify any other JAR files or code repositories needed
-settings.gradle - specify any other build settings needed
+**build.gradle** - specify any other JAR files or code repositories needed
+**settings.gradle** - specify any other build settings needed
 You then get a function Handler.java and HandlerTest.java file in the ./src folder.
 
 Contents of ./hello-java/src/main/java/com/openfaas/function/Handler.java
