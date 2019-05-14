@@ -36,7 +36,7 @@ kubectl -n openfaas create secret generic basic-auth \
 # Install OpenFaaS
 helm upgrade openfaas --install openfaas/openfaas --namespace openfaas --set functionNamespace=openfaas-fn \
 --set basic_auth=true \
---set operator.create=true \
+--set operator.create=false \
 --set rbac=false \
 --set faasIdler.dryRun=false \
 --set faasIdler.inactivityDuration=10s
