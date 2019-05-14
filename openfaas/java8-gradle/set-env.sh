@@ -51,11 +51,11 @@ export REGISTRY=[[HOST_SUBDOMAIN]]-31500-[[KATACODA_HOST]].environments.katacoda
 # install faas-cli
 curl -sSL https://cli.openfaas.com | sh
 
-echo | faas-cli login --username admin --password="$PASSWORD"
-
-export OPENFAAS_PORT=$(kubectl get service/gateway  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
+export OPENFAAS_PORT=$(kubectl get service/gateway-external  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
 
 export OPENFAAS_URL=https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com/
 
+echo -n $PASSWORD | faas-cli login --username admin --password-stdin
+
 echo "OpenFaaS Gateway URL: " $OPENFAAS_URL
-echo "Docker Private Registry URL: " $REGISTRY
+echo "Docker Private Registry URL: " https://$REGISTRY/v2/_catalog

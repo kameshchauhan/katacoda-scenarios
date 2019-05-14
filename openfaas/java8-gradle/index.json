@@ -35,15 +35,13 @@
     },
     "environment": {
         "showdashboard": true,
-        "uilayout": "terminal",
+        "uilayout": "editor-terminal",
         "uimessage1": "\u001b[32mYour interactive Bash terminal.\u001b[m\r\n",
         "icon": "fa-kubernetes",
         "dashboards": [
             {"name": "Kubernetes Dashboard", "port": 30000},
             {"name": "OpenFaaS Portal", "port": 31112},
-            {"name": "Grafana", "port": 31122},
-            {"name": "Prometheus", "port": 31120},
-            {"name": "Alerts", "port": 31121}
+            {"name": "Private Docker Registry Portal", "port": 31500}
         ]
     },
     "backend": {
