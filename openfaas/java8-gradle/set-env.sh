@@ -16,9 +16,6 @@ helm install stable/kubernetes-dashboard --name dash --set=service.type=NodePort
 
 { clear && echo 'Kubernetes with Helm is ready.'; } 2> /dev/null
 
-# Install tillerless helm
-curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-
 mkdir openfaas
 cd openfaas
 
@@ -54,7 +51,7 @@ export REGISTRY=[[HOST_SUBDOMAIN]]-31500-[[KATACODA_HOST]].environments.katacoda
 # install faas-cli
 curl -sSL https://cli.openfaas.com | sh
 
-echo | faas-cli login --username admin --password="$PASSWORD" 
+echo | faas-cli login --username admin --password="$PASSWORD"
 
 export OPENFAAS_PORT=$(kubectl get service/gateway  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
 
