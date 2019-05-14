@@ -57,5 +57,7 @@ export OPENFAAS_URL=https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].
 
 echo -n $PASSWORD | faas-cli login --username admin --password-stdin
 
-echo "OpenFaaS Gateway URL: " $OPENFAAS_URL
-echo "Docker Private Registry URL: " https://$REGISTRY/v2/_catalog
+export TOKEN=$(kubectl describe secret $(kubectl get secret | awk '/^dashboard-token-/{print $1}') | awk '$1=="token:"{print $2}')
+
+echo OpenFaaS Gateway URL: $OPENFAAS_URL
+echo Docker Private Registry URL: https://$REGISTRY/v2/_catalog
