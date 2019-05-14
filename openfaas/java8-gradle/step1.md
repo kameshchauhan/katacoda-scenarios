@@ -21,13 +21,4 @@ this link: https://[[HOST_SUBDOMAIN]]-31112-[[KATACODA_HOST]].environments.katac
 When asked about credentials enter the username as `admin` and password as revealed below:
 `echo -e "The OpenFaaS portal will need these credentials when prompted:\nuser: admin\npassword: $PASSWORD"`{{execute}}
 
-Once login you should be able to see the dashboard and option to deploy sample function.
-
-### Deploy available sample function from store 
-Click on deploy new function option and select `figlet` from the available list and click deploy.
-Observe the status as `not ready` and in few minutes, it will become `ready`. Click the function
-to invoke by providing any simple word like `Hello World` in the Request Body section and check 
-the output.
-Correct output confirms the correct working of OpenFaaS environment.
-
-Proceed to next step to start creating your own function.
+Once login you should be able to see the dashboard and option to deploy function.

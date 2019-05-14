@@ -11,18 +11,11 @@ Now you can list all the templates you've downloaded like this:
 
 `faas-cli new --list`{{execute}}
 
-
-### Docker hub account
-In order to deploy custom function to OpenFaaS, a Docker Hub username or private registry address
-is required to store the images.
-
-export your Docker Hub account as environment variable like below:
-`export username=kameshc`{{execute}}
   
 ### Creating a new project
 Now create a new function called "hello-java" by using below command
 
-`faas-cli new --lang java8 hello-java --prefix=$username`{{execute}}
+`faas-cli new --lang java8 hello-java --prefix $REGISTRY/hello-java --gateway $OPENFAAS_URL`{{execute}}
 
 This generates several files:
 
