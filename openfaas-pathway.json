@@ -4,9 +4,9 @@
   "icon": "fa-openfaas",
   "courses": [
     {
-      "course_id": "go",
-      "title": "OpenFaaS - Function using go on kubernetes",
-      "description": "Learn how to use the go to write serverless function on kubernetes"
+      "course_id": "nodejs",
+      "title": "OpenFaaS - Function using nodejs on kubernetes",
+      "description": "Learn how to use the nodejs to write serverless function on kubernetes"
     }
   ]
 }

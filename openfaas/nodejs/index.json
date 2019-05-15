@@ -1,0 +1,49 @@
+{
+    "id": "nodejs",
+    "pathwayId": "openfaas",
+    "pathwayTitle": "openfaas",
+    "icon": "fa-openfaas",
+    "title": "OpenFaaS - Serverless function using node.js on kubernetes",
+    "description": "Learn & try how to write node.js function on kubernetes",
+    "authenticated": false,
+    "difficulty":	"Introduction",
+    "time":	"15 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Verify the OpenFaaS environment",
+                "courseData": "ensure-configured.sh",
+                "text": "step1.md"
+            },
+            {
+                "title": "Download and setup Istio",
+                "text": "step2.md"
+            },
+            {
+                "title": "Deploy the demo application",
+                "text": "step3.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "code": "set-env.sh",
+            "credits": "[Kamesh Chauhan](linkedin.com/in/kamesh-chauhan-2a58b826)"
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "showdashboard": true,
+        "uilayout": "editor-terminal",
+        "uimessage1": "\u001b[32mYour interactive Bash terminal.\u001b[m\r\n",
+        "icon": "fa-kubernetes",
+        "dashboards": [
+            {"name": "Kubernetes Dashboard", "port": 30000},
+            {"name": "OpenFaaS Portal", "port": 31112}
+        ]
+    },
+    "backend": {
+        "imageid": "kubernetes-cluster-running"
+    }
+}
