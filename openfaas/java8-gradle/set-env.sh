@@ -19,8 +19,8 @@ helm install stable/kubernetes-dashboard --name dash --set=service.type=NodePort
 mkdir openfaas
 cd openfaas
 
-# Create Namespaces for OpenFaaS
-kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
+# install faas-cli
+curl -sSL https://cli.openfaas.com | sh
 
 # Install helm chart for openfaas
 helm repo add openfaas https://openfaas.github.io/faas-netes/
@@ -28,10 +28,8 @@ helm repo add openfaas https://openfaas.github.io/faas-netes/
 # generate a random password
 export PASSWORD=$(head -c 12 /dev/urandom | shasum | cut --delimiter=' ' --fields=1)
 
-# Create OpenFaaS secret to use with gateway
-kubectl -n openfaas create secret generic basic-auth \
---from-literal=basic-auth-user=admin \
---from-literal=basic-auth-password="$PASSWORD"
+# Create Namespaces for OpenFaaS
+kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
 
 # Install OpenFaaS
 helm upgrade openfaas --install openfaas/openfaas --namespace openfaas --set functionNamespace=openfaas-fn \
@@ -45,19 +43,17 @@ helm upgrade openfaas --install openfaas/openfaas --namespace openfaas --set fun
 helm install stable/docker-registry --name registry --namespace kube-system \
 --set service.type=NodePort --set service.nodePort=31500
 
+# Create OpenFaaS secret to use with gateway
+kubectl -n openfaas create secret generic basic-auth \
+--from-literal=basic-auth-user=admin \
+--from-literal=basic-auth-password="$PASSWORD"
+
 # Export Registry url
 export REGISTRY=[[HOST_SUBDOMAIN]]-31500-[[KATACODA_HOST]].environments.katacoda.com
-
-# install faas-cli
-curl -sSL https://cli.openfaas.com | sh
-
 export OPENFAAS_PORT=$(kubectl get service/gateway-external  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
-
 export OPENFAAS_URL=https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com/
-
-echo -n $PASSWORD | faas-cli login --username admin --password-stdin
-
 export TOKEN=$(kubectl describe secret $(kubectl get secret | awk '/^dashboard-token-/{print $1}') | awk '$1=="token:"{print $2}')
 
+echo -n $PASSWORD | faas-cli login --username admin --password-stdin
 echo OpenFaaS Gateway URL: $OPENFAAS_URL
 echo Docker Private Registry URL: https://$REGISTRY/v2/_catalog
