@@ -1,9 +1,9 @@
 {
-    "id": "java8-gradle",
+    "id": "java8-gradle-k8s",
     "pathwayId": "openfaas",
     "pathwayTitle": "openfaas",
     "icon": "fa-openfaas",
-    "title": "OpenFaaS - Serverless function using java8/Gradle on minikube",
+    "title": "OpenFaaS - Serverless function using java8/Gradle on kubernetes",
     "description": "Learn & try how to write java8 function using gradle as build system",
     "authenticated": false,
     "difficulty":	"Introduction",

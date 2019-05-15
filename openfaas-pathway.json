@@ -5,7 +5,7 @@
   "courses": [
     {
       "course_id": "java8-gradle",
-      "title": "OpenFaaS - Function using Java8 and Gradle",
+      "title": "OpenFaaS - Function using Java8 and Gradle on minikube",
       "description": "Learn how to use the java8 to write serverless function using Gradle as build system"
     }
   ]
