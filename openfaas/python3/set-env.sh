@@ -26,7 +26,8 @@ kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/na
 helm repo add openfaas https://openfaas.github.io/faas-netes/
 
 # generate a random password
-export PASSWORD=$(head -c 12 /dev/urandom | shasum | cut --delimiter=' ' --fields=1)
+#export PASSWORD=$(head -c 12 /dev/urandom | shasum | cut --delimiter=' ' --fields=1)
+export PASSWORD=admin
 
 # Create OpenFaaS secret to use with gateway
 kubectl -n openfaas create secret generic basic-auth \

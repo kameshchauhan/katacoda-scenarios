@@ -30,13 +30,11 @@ You can now test the function via the OpenFaaS UI portal, using Postman,
 the CLI or even curl.
 
 Open an OpenFaaS gateway and see all the deployed function to test each:
+When asked about credentials enter the `username/password` as `admin/admin`.
 
 `echo $OPENFAAS_URL`{{execute}}
 
 Or
 
-`echo -n "" | faas-cli invoke hello-python3`{{execute}}
+`echo -n "Hello, Python3" | faas-cli invoke hello-python3`{{execute}}
 
-Or
-
-`echo $OPENFAAS_URL/function/hello-python3`{{execute}}
