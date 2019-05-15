@@ -44,6 +44,6 @@
         ]
     },
     "backend": {
-        "imageid": "kubernetes-running"
+        "imageid": "minikube-running"
     }
 }
