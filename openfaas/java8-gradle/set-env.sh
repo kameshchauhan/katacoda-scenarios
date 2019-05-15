@@ -2,8 +2,8 @@
 
 launch.sh
 
-source <(kubectl completion bash)
-source <(helm completion bash)
+#source <(kubectl completion bash)
+#source <(helm completion bash)
 
 # Helm Setup
 helm init --wait
