@@ -1,63 +1,46 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-launch.sh
-
-source <(kubectl completion bash)
-source <(helm completion bash)
-
-# Helm Setup
-helm init --wait
-helm repo update
-
-# Setup dashboard on port 30000
-helm install stable/kubernetes-dashboard --name dash --set=service.type=NodePort \
---set=enableInsecureLogin=true --set=service.nodePort=30000 \
---set=service.externalPort=80 --namespace kube-system
-
-#{ clear && echo 'Kubernetes with Helm is ready.'; } 2> /dev/null
+minikube start --memory=8192 --cpus=4 --kubernetes-version=v1.13.0
+minikube addons enable dashboard
 
 mkdir openfaas
 cd openfaas
+git clone https://github.com/openfaas/faas-netes
 
-# Create Namespaces for OpenFaaS
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
 
-# Install helm chart for openfaas
-helm repo add openfaas https://openfaas.github.io/faas-netes/
-
 # generate a random password
-export PASSWORD=$(head -c 12 /dev/urandom | shasum | cut --delimiter=' ' --fields=1)
+export PASSWORD="admin"
 
-# Create OpenFaaS secret to use with gateway
 kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-user=admin \
 --from-literal=basic-auth-password="$PASSWORD"
 
-# Install OpenFaaS
-helm upgrade openfaas --install openfaas/openfaas --namespace openfaas --set functionNamespace=openfaas-fn \
---set basic_auth=true \
---set operator.create=false \
---set rbac=false \
---set faasIdler.dryRun=false \
---set faasIdler.inactivityDuration=10s
+cd faas-netes && kubectl apply -f ./yaml
 
-# Install private registry for images
-helm install stable/docker-registry --name registry --namespace kube-system \
---set service.type=NodePort --set service.nodePort=31500
+export PATH=$PWD/bin:$PATH
 
-# Export Registry url
-export REGISTRY=[[HOST_SUBDOMAIN]]-31500-[[KATACODA_HOST]].environments.katacoda.com
+kubectl patch service/gateway -p '{"spec":{"type":"NodePort"}}' -n openfaas
 
-# install faas-cli
-curl -sSL https://cli.openfaas.com | sh
-
-export OPENFAAS_PORT=$(kubectl get service/gateway-external  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
+export OPENFAAS_PORT=$(kubectl get service/gateway  -n openfaas -o 'jsonpath={.spec.ports[0].nodePort}')
 
 export OPENFAAS_URL=https://[[HOST_SUBDOMAIN]]-$OPENFAAS_PORT-[[KATACODA_HOST]].environments.katacoda.com/
 
-echo -n $PASSWORD | faas-cli login --username admin --password-stdin
+# install faas-cli
+curl -sL cli.openfaas.com | sudo sh
 
-export TOKEN=$(kubectl describe secret $(kubectl get secret | awk '/^dashboard-token-/{print $1}') | awk '$1=="token:"{print $2}')
+echo -n $PASSWORD | faas-cli login --password-stdin
 
-echo OpenFaaS Gateway URL: $OPENFAAS_URL
-echo Docker Private Registry URL: https://$REGISTRY/v2/_catalog
+
+echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin —password-stdin
+
+cd ..
+
+# Patch the k8s dashboard
+kubectl patch service/kubernetes-dashboard -p '{"spec":{"type":"NodePort"}}' -n kube-system
+
+# Check the port of the dashboard:
+export K8S_DASH_PORT=$(kubectl get svc kubernetes-dashboard -n kube-system -o 'jsonpath={.spec.ports[0].nodePort}')
+export K8S_DASHBOARD=https://[[HOST_SUBDOMAIN]]-$K8S_DASH_PORT-[[KATACODA_HOST]].environments.katacoda.com
+
+echo $OPENFAAS_URL

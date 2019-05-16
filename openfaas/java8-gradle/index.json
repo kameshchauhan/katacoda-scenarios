@@ -3,15 +3,14 @@
     "pathwayId": "openfaas",
     "pathwayTitle": "openfaas",
     "icon": "fa-openfaas",
-    "title": "OpenFaaS - Serverless function using java8/Gradle on minikube",
+    "title": "OpenFaaS - Serverless function using java8/Gradle",
     "description": "Learn & try how to write java8 function using gradle as build system",
     "authenticated": false,
-    "difficulty":	"Introduction",
-    "time":	"15 minutes",
     "details": {
         "steps": [
             {
                 "title": "Verify the OpenFaaS environment",
+                "code": "set-env.sh",
                 "courseData": "ensure-configured.sh",
                 "text": "step1.md"
             },
@@ -26,8 +25,7 @@
         ],
         "intro": {
             "text": "intro.md",
-            "code": "set-env.sh",
-            "credits": "[Kamesh Chauhan](linkedin.com/in/kamesh-chauhan-2a58b826)"
+            "credits": ""
         },
         "finish": {
             "text": "finish.md"
@@ -35,15 +33,11 @@
     },
     "environment": {
         "showdashboard": true,
+        "dashboard": "Dashboard",
         "uilayout": "editor-terminal",
-        "uimessage1": "\u001b[32mYour interactive Bash terminal.\u001b[m\r\n",
-        "icon": "fa-kubernetes",
-        "dashboards": [
-            {"name": "Kubernetes Dashboard", "port": 30000},
-            {"name": "OpenFaaS Portal", "port": 31112}
-        ]
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
     },
     "backend": {
-        "imageid": "minikube-running"
+        "imageid": "minikube"
     }
 }

@@ -13,15 +13,11 @@ so that on deployment of the function, the required image will be pulled
 kubernetes from Docker Hub.
 `faas-cli push -f hello-java.yml`{{execute}}
 
-The image can be seen in the container registry.
-
-`curl $REGISTRY/v2/_catalog`{{execute}}
-
 ### Deploy the built function
 Now that you have successfully pushed the image to Docker Hub, issue the
 deployment to kubernetes and that will pull the image automatically.
 
-`faas-cli deploy -f hello-java.yml`{{execute}}
+`faas-cli deploy -f hello-java.yml --gateway $OPENFAAS_URL`{{execute}}
 
 ### Test the function
 You can now test the function via the OpenFaaS UI portal, using Postman, 
