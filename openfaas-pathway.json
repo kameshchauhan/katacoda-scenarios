@@ -12,6 +12,11 @@
       "course_id": "python3",
       "title": "OpenFaaS - Function using python3 on kubernetes",
       "description": "Learn how to use the python3 to write serverless function on kubernetes"
-    }
+    },
+    {
+      "course_id": "java8-gradle-k8s",
+      "title": "OpenFaaS - Function using java8/Gradle on kubernetes",
+      "description": "Learn how to use the java8 to write serverless function on kubernetes"
+    },
   ]
 }
