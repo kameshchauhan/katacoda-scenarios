@@ -12,10 +12,6 @@
     }
   ],
   "scenarios": [
-    {
-      "title": "Getting Started with Hello World",
-      "description": "Learn how to echo hello world on terminal",
-      "id": "hello-world"
-    }
+    
   ]
 }
