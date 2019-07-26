@@ -16,11 +16,11 @@
                 "text": "step1.md"
             },
             {
-                "title": "Download and setup Istio",
+                "title": "Create a new function",
                 "text": "step2.md"
             },
             {
-                "title": "Deploy the demo application",
+                "title": "Deploy the function",
                 "text": "step3.md"
             }
         ],

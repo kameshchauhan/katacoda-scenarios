@@ -23,7 +23,7 @@ This generates several files:
 **settings.gradle** - specify any other build settings needed
 You then get a function Handler.java and HandlerTest.java file in the ./src folder.
 
-Contents of ./hello-java/src/main/java/com/openfaas/function/Handler.java
+**Contents** of ./hello-java/src/main/java/com/openfaas/function/Handler.java
 <pre>
 package com.openfaas.function;
 
@@ -41,5 +41,4 @@ public class Handler implements com.openfaas.model.IHandler {
 	    return res;
     }
 }
-
 </pre>

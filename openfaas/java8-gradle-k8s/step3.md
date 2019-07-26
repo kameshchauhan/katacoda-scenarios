@@ -4,13 +4,12 @@ the dependencies it needs:
 
 `faas-cli build -f hello-java.yml`{{execute}}
 
-### Push the built image to Docker Hub
-In order to push the built image to Docker hub, login via docker cli as below.
-`docker login`{{execute}}
-
-On successful login to docker hub account, now you can push the built image
-so that on deployment of the function, the required image will be pulled 
-kubernetes from Docker Hub.
+### Push the built image to Registry
+In order to deploy the build image as function, push it to the container registry. The image
+can be pushed to the Docker hub or a private registry deployed in the cluster. For this course,
+we have deployed the private container registry in the cluster and can be accessed as below:
+Now you can push the built image so that on deployment of the function, the required image will be pulled 
+as part of kubernetes deployment.
 `faas-cli push -f hello-java.yml`{{execute}}
 
 The image can be seen in the container registry.
