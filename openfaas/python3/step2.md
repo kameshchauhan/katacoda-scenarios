@@ -13,9 +13,9 @@ Now you can list all the templates you've downloaded like this:
 
   
 ### Creating a new project
-Now create a new function called "hello-java" by using below command
+Now create a new function called "hello-python3" by using below command
 
-`faas-cli new --lang node hello-python3 --prefix $REGISTRY/hello-python3 --gateway $OPENFAAS_URL`{{execute}}
+`faas-cli new --lang python3 hello-python3 --prefix $REGISTRY/hello-python3 --gateway $OPENFAAS_URL`{{execute}}
 
 Contents of handler function is 
 `/openfaas/hello-python3/handler.py`{{open}}

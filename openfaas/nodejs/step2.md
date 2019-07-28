@@ -13,7 +13,7 @@ Now you can list all the templates you've downloaded like this:
 
   
 ### Creating a new project
-Now create a new function called "hello-java" by using below command
+Now create a new function called "hello-node" by using below command
 
 `faas-cli new --lang node hello-node --prefix $REGISTRY/hello-node --gateway $OPENFAAS_URL`{{execute}}
 
